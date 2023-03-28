@@ -1,4 +1,4 @@
-helm_repo := forgerock-helm/secure-api-gateway-helpers
+helm_repo := forgerock-helm/secure-api-gateway-helpers/
 
 package_helm:
 ifndef version
