@@ -33,5 +33,5 @@ jobs:
         run: |
           # Foreach tgz file in the dir which would have been created above
           for tgz in $(ls *.tgz) ; do
-            make publish_helm $tgz
+            make publish_helm name=$tgz
           done
