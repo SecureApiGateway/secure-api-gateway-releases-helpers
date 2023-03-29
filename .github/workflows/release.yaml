@@ -23,10 +23,12 @@ jobs:
         run: |
           # For each directory in root (multiple packages to be published)
           for d in */ ; do
+            # Remove a trailing / if it exists
+            dir=$(printf "%s\n" "${d%/}")
             # Get the verison value from Chart.yaml
-            version=$(docker run --rm -v ${PWD}:/workdir mikefarah/yq:3.4.1 yq r $d/Chart.yaml version)
+            version=$(docker run --rm -v ${PWD}:/workdir mikefarah/yq:3.4.1 yq r $dir/Chart.yaml version)
             # Make the package with the retrieved value
-            make package_helm name=$d version=$version
+            make package_helm name=$dir version=$version
           done
       - name: Publish Helm Package to repository
         id: publish_helm_package_to_repo

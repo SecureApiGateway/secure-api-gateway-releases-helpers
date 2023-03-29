@@ -1,11 +1,11 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
-  name: ingress-mutator
+  name: ingress-mutator-{{ .Values.namespace }}
   annotations:
     cert-manager.io/inject-ca-from: {{ .Values.selfSignedCert }}
 webhooks:
-  - name: ingress-mutator.default.svc
+  - name: ingress-mutator.{{ .Values.namespace }}.svc  
     clientConfig:
       caBundle: Cg==
       service:
