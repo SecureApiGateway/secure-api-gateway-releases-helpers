@@ -1,6 +1,0 @@
-apiVersion: v2
-name: ingress-mutator
-description: A Helm chart for modifying existing ingresses with whitelist and ssl certificates
-type: application
-version: 0.9.0
-appVersion: 0.9.0
