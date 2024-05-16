@@ -2,5 +2,5 @@ apiVersion: v2
 name: external-secrets-gsm
 description: A Helm chart for deploying any External Secrets where values live in Google Secrets Manager
 type: application
-version: 1.0.0
-appVersion: 1.0.0
+version: 3.0.0
+appVersion: 3.0.0
