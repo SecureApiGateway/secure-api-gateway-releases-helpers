@@ -25,8 +25,6 @@ jobs:
       # https://github.com/actions/checkout
       - uses: actions/checkout@v4
         name: Checkout Code
-        with:
-          ref: 1404-v3-release
 
       - uses: jfrog/setup-jfrog-cli@v3
         id: setup_jf_cli
