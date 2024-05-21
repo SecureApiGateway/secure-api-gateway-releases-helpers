@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v4
         name: Checkout Code
         with:
-          ref: ${{ needs.release_prepare_no_maven.outputs.release_tag_ref }}
+          ref: 1404-v3-release
 
       - uses: jfrog/setup-jfrog-cli@v3
         id: setup_jf_cli
