@@ -1,0 +1,20 @@
+---
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: {{ .Values.externalCert.testTrustedDirectory.tlsClusterSecretName }}
+spec:
+  refreshInterval: 1h             
+  secretStoreRef:
+    kind: SecretStore
+    name: gcp-store               
+  target:
+    name: {{ .Values.externalCert.testTrustedDirectory.tlsClusterSecretName }}
+    creationPolicy: Owner
+  data:
+  - secretKey: tls.crt
+    remoteRef:
+      key: {{ .Values.externalCert.testTrustedDirectory.tlsExternalCertPrefix }}-crt
+  - secretKey: tls.key
+    remoteRef:
+      key: {{ .Values.externalCert.testTrustedDirectory.tlsExternalCertPrefix }}-key
