@@ -1,16 +1,17 @@
+---
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: {{ .Values.ig.testTrustedDirectory.clusterSecretName }}
+  name: {{ .Values.externalCert.fapiPepAs.mtlsCAClusterSecretName }}
 spec:
   refreshInterval: 1h             
   secretStoreRef:
     kind: SecretStore
     name: gcp-store               
   target:
-    name: {{ .Values.ig.testTrustedDirectory.clusterSecretName }}
+    name: {{ .Values.externalCert.fapiPepAs.mtlsCAClusterSecretName }}
     creationPolicy: Owner
   data:
-  - secretKey: test-trusted-dir-keystore.p12
+  - secretKey: ca.crt
     remoteRef:
-      key: {{ .Values.ig.testTrustedDirectory.externalSecretName }}
+      key: {{ .Values.externalCert.fapiPepAs.mtlsCAExternalSecretName }}
