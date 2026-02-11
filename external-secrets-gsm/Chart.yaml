@@ -1,5 +1,5 @@
 name: external-secrets-gsm
 description: A Helm chart for deploying any External Secrets where values live in Google Secrets Manager
 type: application
-version: 5.0.0
-appVersion: 5.0.0
+version: 5.2.0
+appVersion: 5.2.0
